@@ -25,7 +25,14 @@ encoding: utf-8
 
 # Comment
 # disqus_shortname: discussion_shortname
-
+# gitalk settings
+gitalk:
+   enable: true
+   owner: tester-dolores
+   repo: tester-dolores.github.io
+   clientID: e478da9c656ec882981a
+   clientSecret: ec6defee8cd83f7c38dff3f23e8cdf572217eda1
+   admin: tester-dolores
 
 # Google Analytics
 # google_analytics: tracking_ID
@@ -37,3 +44,10 @@ sass:
   style: compressed
 gems:
   - jekyll-sitemap
+
+# 代码高亮
+highlighter: rouge
+gems: [jekyll-paginate]
+
+future: true
+published: false
