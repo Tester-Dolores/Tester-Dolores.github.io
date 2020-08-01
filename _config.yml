@@ -28,11 +28,11 @@ encoding: utf-8
 # gitalk settings
 gitalk:
    enable: true
-   owner: Tester-Dolores
-   repo: Tester-Dolores.github.io
+   owner: tester-dolores
+   repo: tester-dolores.github.io
    clientID: e478da9c656ec882981a
    clientSecret: ec6defee8cd83f7c38dff3f23e8cdf572217eda1
-   admin: Tester-Dolores
+   admin: tester-dolores
 
 # Google Analytics
 # google_analytics: tracking_ID
