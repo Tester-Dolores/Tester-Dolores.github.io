@@ -5,6 +5,7 @@ date:   2020-07-31 22:21:49 +0800
 categories: 其他
 tags: 其他
 ---
+<p>https://sharefs.yun.kugou.com/202008030050/6f3e60d91e216b702cda820f8dc827f7/G213/M05/08/11/tZQEAF6muvKAIEkAAEBqH0VZabA093.mp3</p>
 搭建blog纯属心血来潮,看到github上许多牛人分享了自己的博客,又看看自己现在在其他平台的blog,搞一个吧!
 
 历经几天(家里网速实在是太慢了,download rubyinstall 实在是不行,没法最后去其他地方download)总算是搞好了环境,fork别人的模板,开始认真的写作了!
