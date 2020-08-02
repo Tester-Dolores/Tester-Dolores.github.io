@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Github Page & Jekyll 搭建博客"
-date:   2020-07-31 22:21:49
+date:   2020-07-31 22:21:49 +0800
 categories: 其他
 tags: 其他
 ---
@@ -49,14 +49,60 @@ gem -v
 
 4.学习一下markdown语法
 
-5.学习以下jekyll语法
+5.学习一下jekyll语法
 
 
 ps:我这里是fork别人的项目,但 是,我当时不知道可以直接用,所以我用git 克隆下来,然后放到我自己创建的repositories,然后 更改相关的配置.然后push上去.
 
+## 5.搭建博客遇到的问题
 
-似乎没什么好说的了.
+### First question: 日期被自动加1天
+**解决方法:**
 
+修改博客时间 添加 +0800
+
+`date:   2020-07-31 22:21:49 +0800`
+
+### Second question: 404
+
+
+https://zhuanlan.zhihu.com/p/97340941   JeKyll 在 Windows 下本地预览中文路径
+
+https://github.com/Huxpro/huxpro.github.io/issues/62   run jekyll serve failed ''cannot load such file -- jekyll-paginate
+
+**解决方法:**
+
+1.找到 ruby安装路径\Ruby26-x64\lib\ruby\2.6.0\webrick\httpservlet\filehandler.rb,添加两行代码
+
+```
+# 第一处
+path = req.path_info.dup.force_encoding(Encoding.find("filesystem")
+path.force_encoding("UTF-8") # 加入的代码
+if trailing_pathsep?(req.path_info)  
+
+# 第二处
+break if base == "/"
+base.force_encoding("UTF-8") # 加入的代码
+break unless File.directory?(File.expand_path(res.filename + base))
+```
+
+2.重启jekyll
+
+`jekyll clean && jekyll serve`
+
+
+本以为到此就完美解决问题了,结果又又又报错了!抓狂....
+
+```
+Configuration file: D:/Tester-Dolores.github.io/_config.yml
+jekyll 4.1.1 | Error:  cannot load such file -- D:/NEWdownload/rubyinstaller-devkit-2.6.6-1-x64/Ruby26-x64/lib/ruby/gems/2.6.0/gems/tzinfo-data-1.2020.1/lib/tzinfo/data/definitions/CN
+```
+
+解决方法: 重装依赖
+
+Just two step:"First run 'gem uninstall --all', then run 'gem install github-pages'"
+
+OK! 完美解决!
 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
