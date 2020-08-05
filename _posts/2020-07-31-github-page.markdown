@@ -5,6 +5,15 @@ date:   2020-07-31 22:21:49 +0800
 categories: 其他
 tags: 其他
 ---
+<a name="index">**Index**</a>
+&emsp;<a href="#0">1.下载 rubyinstaller</a>  
+&emsp;<a href="#1">2.安装bundler & jekyll</a>  
+&emsp;<a href="#2">3.启动服务</a>  
+&emsp;<a href="#3">4.搭建博客</a>  
+&emsp;<a href="#4">5.搭建博客遇到的问题</a>  
+&emsp;&emsp;<a href="#5">First question: 日期被自动加1天</a>  
+&emsp;&emsp;<a href="#6">Second question: 404</a>  
+
 <p>https://sharefs.yun.kugou.com/202008030050/6f3e60d91e216b702cda820f8dc827f7/G213/M05/08/11/tZQEAF6muvKAIEkAAEBqH0VZabA093.mp3</p>
 搭建blog纯属心血来潮,看到github上许多牛人分享了自己的博客,又看看自己现在在其他平台的blog,搞一个吧!
 
@@ -12,7 +21,7 @@ tags: 其他
 
 环境: Win10 x64 
 
-## 1.下载 rubyinstaller
+## <a name="0">1.下载 rubyinstaller
 官网: https://rubyinstaller.org/downloads/
 
 这里我下载的是 Ruby+Devkit 2.6.X (x64)
@@ -27,7 +36,7 @@ ruby -v
 
 gem -v
 
-## 2.安装bundler & jekyll
+## <a name="1">2.安装bundler & jekyll
 首先我们改一下gem源,否则你会遇到报错!(原因看这里-> https://gems.ruby-china.com/)
 
 ` gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ `
@@ -36,11 +45,11 @@ gem -v
 
 安装jekyll: `gem install jekyll`
 
-## 3.启动服务
+## <a name="2">3.启动服务
 `jekyll server`,启动成功后浏览器打开 http://127.0.0.1:4000/
 
 
-## 4.搭建博客
+## <a name="3">4.搭建博客
 
 1.你必须有github账号
 
@@ -55,16 +64,16 @@ gem -v
 
 ps:我这里是fork别人的项目,但 是,我当时不知道可以直接用,所以我用git 克隆下来,然后放到我自己创建的repositories,然后 更改相关的配置.然后push上去.
 
-## 5.搭建博客遇到的问题
+## <a name="4">5.搭建博客遇到的问题
 
-### First question: 日期被自动加1天
+### <a name="5">First question: 日期被自动加1天
 **解决方法:**
 
 修改博客时间 添加 +0800
 
 `date:   2020-07-31 22:21:49 +0800`
 
-### Second question: 404
+### <a name="6">Second question: 404
 
 
 https://zhuanlan.zhihu.com/p/97340941   JeKyll 在 Windows 下本地预览中文路径
@@ -76,12 +85,12 @@ https://github.com/Huxpro/huxpro.github.io/issues/62   run jekyll serve failed '
 1.找到 ruby安装路径\Ruby26-x64\lib\ruby\2.6.0\webrick\httpservlet\filehandler.rb,添加两行代码
 
 ```
-# 第一处
+/*第一处*/
 path = req.path_info.dup.force_encoding(Encoding.find("filesystem")
 path.force_encoding("UTF-8") # 加入的代码
 if trailing_pathsep?(req.path_info)  
 
-# 第二处
+/*第二处*/
 break if base == "/"
 base.force_encoding("UTF-8") # 加入的代码
 break unless File.directory?(File.expand_path(res.filename + base))
