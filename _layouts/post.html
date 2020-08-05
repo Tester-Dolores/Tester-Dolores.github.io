@@ -1,10 +1,13 @@
 ---
 layout: default
 ---
+<!-- top -->
+<link rel="stylesheet" href="/css/return_top.css" />
+<script src="/assets/js/return_top.js"></script>
 <!-- 添加评论系统 -->
 <link rel="stylesheet" href="/css/gitalk.css" />
 <script src="/assets/js/gitalk.min.js"></script>
-<article class="post container">
+<article id="article" class="post container">
   <div class="post-meta">
     <span class="post-meta-span date">{{ page.date | date:"%Y %B %d" }}</span>
     {% if page.tags.size > 0 %}
@@ -17,6 +20,9 @@ layout: default
 
   <h1 class="post-title">{{ page.title }}</h1>
   {{ content }}
+  <div>
+     <button onclick="returnTop()" id="btnTop" title="返回顶部">TOP</button>
+  </div>
   <!-- gitalk评论框-->
   {% if site.gitalk %}
   <div class="comment">
