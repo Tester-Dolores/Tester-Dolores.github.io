@@ -204,6 +204,85 @@ Selector('.column.col-2 label').count;
 
 **注意： 这些方法和属性是异步的，所以在使用之前使用await**
 
+# 截屏 screenshots
+## 测试用例执行失败时截屏
+1.命令行
+
+testcafe chrome ./ **-s takeOnFails=true**
+
+2.runner.screenshots
+```
+runner.screenshots({
+  takeOnFails:true
+  });
+```
+3.配置文件
+```
+{
+  "screenshots":{
+    "takeOnFails":true
+  }
+}
+```
+
+## 截屏选项
+Option|Type|Description|Default Value
+:--:|:--:|:--:|:--:
+path|String	|The base directory where screenshots are saved.	|./screenshots
+takeOnFails|	Boolean|	true to take a screenshot whenever a test fails.	|false
+pathPattern	|String	|A pattern that defines how TestCafe composes the relative path to a screenshot file. See Screenshot and Video Directories.	|See Default Path Pattern.
+fullPage	|String	|true to capture the full page, including content that is not visible due to overflow.	|false
+
+## 截图文件名自定义参数
+Placeholder|Description
+:--:|:--:
+${DATE}	|测试开始日期
+${TIME}	|测试开始时间
+${TEST_INDEX}	|The test's index.
+${FILE_INDEX}	|The screenshot file's index.
+${QUARANTINE_ATTEMPT}	|The quarantine attempt's number. If the quarantine mode is disabled, the ${QUARANTINE_ATTEMPT}| placeholder's value is 1.
+${FIXTURE}	|The fixture's name.
+${TEST}	|测试用例名称
+${USERAGENT}	|包含 ${BROWSER}, ${BROWSER_VERSION}, ${OS}, and ${OS_VERSION} (separated by underscores).
+${BROWSER}	|浏览器名称
+${BROWSER_VERSION}	|浏览器版本
+${OS}	|操作系统名称
+${OS_VERSION}	|操作系统版本
+${TEST_ID}|	Resolves to test-${TEST_INDEX} if TestCafe can associate this screenshot or video with a specific test; resolves to an empty string otherwise (for instance, when a single video is recorded for the entire test run).
+${RUN_ID}|	Resolves to run-${QUARANTINE_ATTEMPT} for screenshots taken when quarantine mode is enabled; resolves to an empty string for videos and for screenshots taken when quarantine mode is disabled.
+
+# 录屏
+**注意：**录屏只允许在谷歌浏览器，火狐浏览器，edge浏览器，当你使用远程浏览器测试时无法录屏
+
+**安装软件** <a href="https://ffmpeg.org/">FFmpeg library</a>
+
+## use
+1.命令行
+
+testcafe chrome ./ **--video artifacts/videos**
+
+2.runner.screenshots
+```
+runner.video('artifacts/videos');
+```
+3.配置文件
+```
+{
+  "videoPath":"artifacts/videos"
+}
+```
+
+## 录屏选项
+Option|	Type|		Description|		Default Value
+:--:|:--:|	:--:|:--:
+failedOnly	|	Boolean	|	默认为false,当为true时只记录失败的用例。|		false
+singleFile|		Boolean|		默认为false,当为true时所有录屏在同一个MP4文件|		false
+ffmpegPath	|	String	|	The path to the FFmpeg codec executable.	|	Auto-detected
+pathPattern	|	String|		A pattern that defines how TestCafe composes the relative path to a video file.|	 See Screenshot and Video Directories.	See Default Path Pattern.
+
+
+# 拦截http请求
+## 记录http请求
 
 
 [jekyll]:      http://jekyllrb.com
