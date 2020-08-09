@@ -2,28 +2,38 @@
 layout: post
 title:  "pipenv - 超好用的python项目环境和依赖管理环境"
 date:   2020-08-09 16:21:49 +0800
-categories: python库
-tags: python库
+categories: 	Python库
+tags: Python库
 ---
- <a href="https://github.com/pypa/pipenv"> pipenv GitHub 文档</a>
+<a name="index">**目录**</a>
+<a href="#0">安装</a>  
+<a href="#1">使用</a>  
+&emsp;<a href="#2">在virtualenv中生成一个shell</a>  
+&emsp;<a href="#3">安装在Pipfile.lock中指定的所有包。</a>  
+&emsp;<a href="#4">显示依赖关系图</a>  
+<a href="#5">使用过程遇到的问题</a>  
+&emsp;<a href="#6">pipenv lock 超时</a>  
+
+***
+<a href="https://github.com/pypa/pipenv"> pipenv GitHub 文档</a>
  
- <a href="https://pipenv.pypa.io/en/latest/#install-pipenv-today">pipenv 英文文档</a>
+<a href="https://pipenv.pypa.io/en/latest/#install-pipenv-today">pipenv 英文文档</a>
  
- # 安装
+# <a name="0">安装
  `pip install pipenv`
  
- # 使用
-## 在virtualenv中生成一个shell
+# <a name="1">使用
+## <a name="2">在virtualenv中生成一个shell
 `pipenv shell`
 
-## 安装在Pipfile.lock中指定的所有包。
+## <a name="3">安装在Pipfile.lock中指定的所有包。
 `pipenv sync`
 
-## 显示依赖关系图
+## <a name="4">显示依赖关系图
 `pipenv graph`
 
-# 使用过程遇到的问题
-## pipenv lock 超时
+# <a name="5">使用过程遇到的问题
+## <a name="6">pipenv lock 超时
 参考: <a href="https://www.jianshu.com/p/d6882ceb8aa6"> pipenv lock 太慢？试试指定mirror</a>
 
 

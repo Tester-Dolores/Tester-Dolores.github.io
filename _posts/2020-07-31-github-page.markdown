@@ -5,7 +5,7 @@ date:   2020-07-31 22:21:49 +0800
 categories: 其他
 tags: 其他
 ---
-<a name="index">**Index**</a>
+<a name="index">**目录**</a>
 &emsp;<a href="#0">1.下载 rubyinstaller</a>  
 &emsp;<a href="#1">2.安装bundler & jekyll</a>  
 &emsp;<a href="#2">3.启动服务</a>  
@@ -14,6 +14,7 @@ tags: 其他
 &emsp;&emsp;<a href="#5">First question: 日期被自动加1天</a>  
 &emsp;&emsp;<a href="#6">Second question: 404</a>  
 
+***
 <p>https://sharefs.yun.kugou.com/202008030050/6f3e60d91e216b702cda820f8dc827f7/G213/M05/08/11/tZQEAF6muvKAIEkAAEBqH0VZabA093.mp3</p>
 搭建blog纯属心血来潮,看到github上许多牛人分享了自己的博客,又看看自己现在在其他平台的blog,搞一个吧!
 
