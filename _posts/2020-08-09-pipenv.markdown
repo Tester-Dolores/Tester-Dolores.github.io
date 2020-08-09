@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "pipenv - 超好用的python项目环境和依赖管理环境"
+date:   2020-08-09 16:21:49 +0800
+categories: python库
+tags: python库
+---
+ <a href="https://github.com/pypa/pipenv"> pipenv GitHub 文档</a>
+ 
+ <a href="https://pipenv.pypa.io/en/latest/#install-pipenv-today">pipenv 英文文档</a>
+ 
+ # 安装
+ `pip install pipenv`
+ 
+ # 使用
+## 在virtualenv中生成一个shell
+`pipenv shell`
+
+## 安装在Pipfile.lock中指定的所有包。
+`pipenv sync`
+
+## 显示依赖关系图
+`pipenv graph`
+
+# 使用过程遇到的问题
+## pipenv lock 超时
+参考: <a href="https://www.jianshu.com/p/d6882ceb8aa6"> pipenv lock 太慢？试试指定mirror</a>
+
+
+步骤：
+
+1.跳过lock
+
+`pipenv install [source] --skip-lock`
+* [source] 需要安装的库
+
+
+2.切换国内源
+
+`pipenv lock --pypi-mirror [source url]`
+
+* [source url] 国内源
+
+国内源:
+
+阿里云：http://mirrors.aliyun.com/pypi/simple/
+
+豆瓣：http://pypi.douban.com/simple/
+
+清华大学：https://pypi.tuna.tsinghua.edu.cn/simple/
+
+中国科学技术大学：https://pypi.mirrors.ustc.edu.cn/simple/
+
+[jekyll]:      http://jekyllrb.com
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-help]: https://github.com/jekyll/jekyll-help
