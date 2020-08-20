@@ -1,48 +1,39 @@
 ---
-layout: default
+layout: base
 ---
-<!-- top -->
-<link rel="stylesheet" href="/css/return_top.css" />
-<script src="/assets/js/return_top.js"></script>
 <!-- 添加评论系统 -->
-<link rel="stylesheet" href="/css/gitalk.css" />
-<script src="/assets/js/gitalk.min.js"></script>
-<article id="article" class="post container">
-  <div class="post-meta">
-    <span class="post-meta-span date">{{ page.date | date:"%Y %B %d" }}</span>
-    {% if page.tags.size > 0 %}
-    <span class="post-meta-span tag">{{ page.tags | join: ', ' }}</span>
-    {% endif %}
-    <span id="post-meta-span date">
-      访问量: <span id="busuanzi_value_page_pv"></span>
-    </span>
+<link rel="stylesheet" href="../../../../public/css/gitalk.css">
+<script src="../../../../public/js/gitalk.min.js"></script>
+<div class="row">
+  <div class="col-md-13 aside3-title">
+    <br>
+    <h2 id="#identifier">{{ page.title }}</h2>
+    {{ page.date | date:"%Y年%m月%d日" }}
   </div>
 
-  <h1 class="post-title">{{ page.title }}</h1>
-  {{ content }}
-  <div>
-     <button onclick="returnTop()" id="btnTop" title="返回顶部">TOP</button>
-  </div>
-  <!-- gitalk评论框-->
+
+  <div class="col-md-13 aside3-content">
+    <hr>
+    <div id="content">
+      {{ content }}
+    </div>
+    <div class="col-md-13 aside3-copyright">
+      {% include copyright.html %}
+    </div>
+    <!-- gitalk评论框-->
   {% if site.gitalk %}
   <div class="comment">
    {% include comments.html %}
   </div>
   {% endif %}
-</article>
-
-<div class="post-share">
-  <div class="container">
-    <a href="https://twitter.com/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&text={{ page.title }}" target="_blank" class="post-share-icon twitter"></a>
-    <a href="https://www.evernote.com/clip.action?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&title={{ page.title }}" target="_blank" class="post-share-icon evernote"></a>
-    <a href="http://service.weibo.com/share/share.php?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&title={{ page.title }}" target="_blank" class="post-share-icon weibo"></a>
+    <hr>
+    {% include creativecommons.html %}
+  </div>
+  <!-- 目录 -->
+  <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
+    <div class="panel panel-success">
+      <div class="panel-body" id="nav"></div>
+    </div>
   </div>
 </div>
 
-{% if site.disqus_shortname %}
-<div class="comment container">
-  <div id="disqus_thread">
-    <a href=""></a>
-  </div>
-</div>
-{% endif %}

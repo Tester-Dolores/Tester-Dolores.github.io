@@ -1,22 +1,39 @@
 ---
-layout: default
-title: Dolores Blog
+layout: page_no_comments
+title: <i class="fa fa-home fa-lg"></i>
+titlename: 首页
 ---
-<div id="home" class="container">
-    
+
+<center><p style=font-size:12px>一个人淋雨的雨天,就等于是晴.BY Dolores</p></center>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">{{ site.locals.newest }}</div>
+      {% for post in paginator.posts %}
+        <a  href='{{ post.url }}' class="list-group-item clearfix">
+          {{post.title}}
+          <span class="badge">{{ post.date | date:"%Y年%m月%d日" }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+  
+  {% for cate in site.cates %}
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">{{ cate }}</div>
+        {% for category in site.categories %} 
+          {% if category[0] == cate %}
+            {% for post in category[1] limit:5 %}
+              <a  href='{{ post.url }}' class="list-group-item clearfix">
+                {{post.title}}
+                <span class="badge">{{ post.date | date:"%Y年%m月%d日" }}</span>
+              </a>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
 </div>
-<span id="busuanzi_container_site_uv">
-      总访问量: <span id="busuanzi_value_site_uv"></span>
-  </span>
-
-　　<p>最新文章</p>
-
-　　<ul>
-
-　　　　{% for post in site.posts %}
-
-　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-
-　　　　{% endfor %}
-
-　　</ul>

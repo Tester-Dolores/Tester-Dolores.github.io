@@ -1,6 +1,6 @@
 ## 模板 
 
-source: https://github.com/P233/3-Jekyll
+source: https://github.com/li2/li2.github.io
 
 ## 评论系统参考
 
