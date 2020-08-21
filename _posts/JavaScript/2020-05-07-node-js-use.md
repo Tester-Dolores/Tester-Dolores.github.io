@@ -16,7 +16,7 @@ http://nodejs.cn/download/
 
 命令行（cmd）输入 `node -v`, 打印出版本号就证明安装好了
 
-<img src="/assets/img/js/isnodeinstall.png" style="width:100%">
+<img src="/assets/img/js/isnodeinstall.png" style="width:100%" />
 
 ## 执行js脚本
 
