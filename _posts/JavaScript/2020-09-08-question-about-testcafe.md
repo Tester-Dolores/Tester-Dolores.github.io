@@ -9,9 +9,13 @@ tags: [testcafe]
 还没有package.json时方案：
 1. 执行`npm link testcafe`
 2. `node runner.js`
-** 安装了package.json需要在package.json加上这句： `{"type": "module"}` **
+
+**安装了package.json需要在package.json加上这句： `{"type": "module"}`**
+
 原因看这里 ： https://stackoverflow.com/questions/45854169/how-can-i-use-an-es6-import-in-node
+
 runner.js
+
 ```
 import createTestCafe  from 'testcafe';
 
