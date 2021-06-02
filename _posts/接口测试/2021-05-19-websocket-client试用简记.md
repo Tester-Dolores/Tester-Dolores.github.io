@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  websocket-client 试用简记
-category: 接口测试 Python
+category: 接口测试,Python
 tags: [websocket接口测试,Python库]
 ---
 
