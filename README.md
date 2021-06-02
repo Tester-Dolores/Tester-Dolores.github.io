@@ -12,7 +12,7 @@ source: https://github.com/caojiele/caojiele.github.io
 ---
 layout: post
 title:  Win10系统git安装与配置(上)
-category: Git
+categories: Git
 tags: []
 ---
 

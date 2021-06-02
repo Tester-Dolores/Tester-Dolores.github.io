@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Websocket基础知识简记
-category: 接口测试,理论知识
+categories: 接口测试 理论知识
 tags: [websocket接口测试]
 ---
 
