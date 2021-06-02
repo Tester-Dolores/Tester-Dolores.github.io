@@ -24,3 +24,15 @@ tags: []
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-help]: https://github.com/jekyll/jekyll-help
+
+## 已有分类
+Git
+Linux
+接口测试 
+Python
+理论知识
+
+## 已有标签
+接口测试 - >  websocket接口测试
+接口测试 - >  jmeter
+Python ->    Python库
